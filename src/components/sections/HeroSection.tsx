@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { trackEvent } from "@/lib/analytics";
 
 export default function HeroSection() {
   const handleScroll = (href: string) => {
@@ -50,7 +51,7 @@ export default function HeroSection() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#contacto"
-                  onClick={(e) => { e.preventDefault(); handleScroll("#contacto"); }}
+                  onClick={(e) => { e.preventDefault(); handleScroll("#contacto"); trackEvent("cta_click", { label: "hablemos" }); }}
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "bg-accent hover:bg-accent/90 text-accent-foreground font-semibold no-underline"
@@ -60,7 +61,7 @@ export default function HeroSection() {
                 </a>
                 <a
                   href="#experiencia"
-                  onClick={(e) => { e.preventDefault(); handleScroll("#experiencia"); }}
+                  onClick={(e) => { e.preventDefault(); handleScroll("#experiencia"); trackEvent("cta_click", { label: "ver_experiencia" }); }}
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
                     "border-primary-foreground/25 text-primary-foreground bg-transparent hover:bg-primary-foreground/8 no-underline"

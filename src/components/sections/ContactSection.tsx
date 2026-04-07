@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 const IconWhatsApp = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
@@ -107,6 +108,7 @@ export default function ContactSection() {
       `Hola Alan, soy ${name} (${email}).\n\n${message}`
     );
     window.open(`https://wa.me/34643382057?text=${text}`, "_blank");
+    trackEvent("form_submit", { method: "whatsapp" });
 
     setFormState("sent");
     form.reset();
@@ -142,6 +144,7 @@ export default function ContactSection() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
+                    onClick={() => trackEvent("contact_link_click", { label: item.label.toLowerCase() })}
                     className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-accent/50 hover:shadow-sm transition-all duration-200 no-underline group"
                   >
                     <span className="text-primary/70 shrink-0">{(() => { const Icon = ICONS[item.iconKey]; return <Icon />; })()}</span>
@@ -175,6 +178,7 @@ export default function ContactSection() {
                   href="https://wa.me/34643382057?text=Hola%20Alan%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre..."
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("whatsapp_click", { source: "boton_contacto" })}
                   className={cn(
                     buttonVariants(),
                     "flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold no-underline text-center"
@@ -186,6 +190,7 @@ export default function ContactSection() {
                   href="/CV-Coach-Alan.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("cv_download")}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "flex-1 no-underline text-center"
