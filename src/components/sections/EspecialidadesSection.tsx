@@ -31,6 +31,16 @@ const especialidades = [
       "Seguimiento de progresiones de fuerza",
     ],
   },
+  {
+    title: "Hyrox & Hybrid Training",
+    items: [
+      "Programación que combina fuerza y resistencia cardiovascular",
+      "Entrenamiento metabólico de alta intensidad (HIIT, EMOM, Intervals)",
+      "Rowing, Ski Erg, Air Bike, Assault Bike",
+      "Sled push/pull, farmers carries, sandbag work",
+      "Estrategias de pacing y transiciones para eventos",
+    ],
+  },
 ];
 
 export default function EspecialidadesSection() {
@@ -48,7 +58,7 @@ export default function EspecialidadesSection() {
           </div>
         </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
           {especialidades.map((esp, i) => (
             <BlurFade key={esp.title} delay={0.08 * i} inView>
               <div>
