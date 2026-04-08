@@ -95,6 +95,10 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script
+          src="https://t.contentsquare.net/uxa/d181a278eb304.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
