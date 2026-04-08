@@ -7,8 +7,8 @@ const soluciones = [
     resultado: "80% menos tiempo de organización",
     descripcion:
       "Sistema para competencias internas que calcula rankings automáticamente, gestiona equipos y resultados. Usado en competencia real con 40+ participantes.",
-    link: null,
-    linkLabel: null,
+    link: "https://compegunnen.vercel.app/",
+    linkLabel: "Ver sistema →",
   },
   {
     numero: "02",

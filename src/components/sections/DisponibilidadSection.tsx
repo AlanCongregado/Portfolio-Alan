@@ -6,7 +6,7 @@ const info = [
   { label: "Disponibilidad", value: "Abril / Mayo 2026 (proceso de instalación en curso)" },
   { label: "Horarios", value: "Flexibilidad total (mañanas / tardes / fines de semana)" },
   { label: "Situación legal", value: "Residente en España (TIE en trámite – familiar de ciudadano UE)" },
-{ label: "Idiomas", value: "Español (nativo) · Inglés (intermedio-avanzado)" },
+{ label: "Idiomas", value: "Español (nativo) · Inglés (avanzado)" },
   { label: "Referencias", value: "Disponibles bajo solicitud de boxes anteriores en Argentina" },
 ];
 
